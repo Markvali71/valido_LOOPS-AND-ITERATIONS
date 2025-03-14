@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 LOOPS AND ITERATIONS🔥</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 🌊 EPIC GEAR 5 BACKGROUND */
+        body {
+            font-family: 'Pirata One', cursive;
+            color: rgb(5, 0, 0);
+            text-align: center;
+            padding: 20px;
+            overflow: hidden;
+            position: relative;
+            background: url('https://media.giphy.com/media/lTWrURRi8Di59m4x8f/giphy.gif?cid=ecf05e47jhdmwkhkn37cftwnfhrrjlu3wyw06hqihiauf4g1&ep=v1_gifs_related&rid=giphy.gif&ct=g') no-repeat center center/cover;
+            height: 100vh;
+        }
+
+        /* 🔥 Glowing Header */
+        .header {
+            font-size: 26px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px rgb(255, 255, 0), 0 0 20px red;
+        }
+
+        /* 🏴‍☠️ One Piece-Themed Buttons */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: gold;
+            color: black;
+            box-shadow: 0 0 15px gold;
+        }
+        .btn-primary:hover {
+            background: orange;
+            transform: scale(1.1);
+        }
+
+        .btn-secondary {
+            background: red;
+            color: white;
+            box-shadow: 0 0 15px red;
+        }
+        .btn-secondary:hover {
+            background: darkred;
+            transform: scale(1.1);
+        }
+
+        /* 🏴‍☠️ Wanted Poster Effect */
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 450px;
+            margin: auto;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* ⚡ Animated Output Box */
+        pre {
+            text-align: left;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 12px;
+            border-radius: 5px;
+            box-shadow: inset 0 0 10px yellow;
+            overflow: auto;
+            max-height: 300px;
+            font-size: 16px;
+            font-weight: bold;
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">🔥 VALIDO, MARK ANGELO A. | BSIT-601 🏴‍☠️</div>
+    <h1>⚡ LOOPS AND ITERATIONS</h1>
+
+    <div class="container">
+        <button class="btn-primary" onclick="checkAge()">🔍 Check Age</button>
+        <button class="btn-primary" onclick="checkNumber()">🔢 Check Number</button>
+        <button class="btn-secondary" onclick="runLoops()">⚡ Run Loops</button>
+
+        <h2>📌 Output:</h2>
+        <pre id="output">Click "Run Loops" to see results...</pre>
+    </div>
+
+    <script>
+        function checkAge() {
+            let age = parseInt(prompt("📝 Enter your age:"), 10);
+            if (!isNaN(age)) {
+                if (age >= 25) {
+                    alert("✅ You are 25 years old or older.");
+                } else {
+                    alert("❌ You are below 25.");
+                }
+            } else {
+                alert("⚠️ Please enter a valid number.");
+            }
+        }
+
+        function checkNumber() {
+            let number = parseFloat(prompt("🔢 Enter a number:"));
+            if (!isNaN(number)) {
+                alert(number < 100 ? "✅ The number is less than 100." : "❌ The number is 100 or greater.");
+            } else {
+                alert("⚠️ Please enter a valid number.");
+            }
+        }
+
+        function runLoops() {
+            let output = "";
+
+            output += "🔢 Numbers from 0 to 30:\n";
+            for (let i = 0; i <= 30; i++) {
+                output += i + " ";
+            }
+
+            output += "\n\n🟢 Even numbers from 0 to 40:\n";
+            for (let i = 0; i <= 40; i += 2) {
+                output += i + " ";
+            }
+
+            output += "\n\n🔻 Multiples of 3 from 40 to 10:\n";
+            for (let i = 40; i >= 10; i--) {
+                if (i % 3 === 0) {
+                    output += i + " ";
+                }
+            }
+
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+</body>
+</html>
